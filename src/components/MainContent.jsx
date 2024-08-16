@@ -5,16 +5,16 @@ import { faGamepad, faSearch, faDollarSign, faCubes, faSort } from '@fortawesome
 import { useState } from 'react';
 
 const initialProducts = [
-  { id: 1, name: 'Zelda Breath of the Wild', salePrice: 45.00, originalPrice: 52.50, image: '../../public/assets/images/product.jpg', game: 'OSRS', type: 'Items', feature: 'RPG' },
-  { id: 2, name: 'Zelda Breath of the Wild 2', salePrice: 25.00, originalPrice: 35.50, image: '../../public/assets/images/product.jpg', game: 'RS3', type: 'Items', feature: 'RPG' },
-  { id: 3, name: 'Zelda Ocarine Time', salePrice: 75.00, originalPrice: 99.50, image: '../../public/assets/images/product.jpg', game: 'OSRS', type: 'Gold', feature: 'ADVENTURE' },
-  { id: 4, name: 'Zelda Majora´s Mask', salePrice: 15.00, originalPrice: 20.50, image: '../../public/assets/images/product.jpg', game: 'RS3', type: 'Items', feature: 'ARCADE' },
-  { id: 5, name: 'Zelda Link to the Past', salePrice: 45.00, originalPrice: 52.50, image: '../../public/assets/images/product.jpg', game: 'CS:GO', type: 'Gold', feature: 'ADVENTURE' },
-  { id: 6, name: 'Zelda Tears of the Kingdom', salePrice: 15.00, originalPrice: 22.50, image: '../../public/assets/images/product.jpg', game: 'RS3', type: 'Gold', feature: 'RPG' },
-  { id: 7, name: 'Zelda Awakening', salePrice: 60.00, originalPrice: 92.50, image: '../../public/assets/images/product.jpg', game: 'CS:GO', type: 'Accounts' },
-  { id: 8, name: 'Zelda II The Adventure of Link', salePrice: 10.00, originalPrice: 25.50, image: '../../public/assets/images/product.jpg', game: 'CS:GO', type: 'Items', feature: 'RPG' },
-  { id: 9, name: 'Zelda The Faces of Evil', salePrice: 42.00, originalPrice: 55.50, image: '../../public/assets/images/product.jpg', game: 'OSRS', type: 'Accounts', feature: 'ADVENTURE' },
-  { id: 10, name: 'Zelda´s Adventure', salePrice: 45.00, originalPrice: 75.50, image: '../../public/assets/images/product.jpg', game: 'RS3', type: 'Accounts', feature: 'ARCADE' },
+  { id: 1, name: 'Zelda Breath of the Wild', salePrice: 45.00, originalPrice: 52.50, image: '../../public/assets/images/product.jpg', game: 'OSRS', type: 'Items', feature: 'RPG', description: 'Nintendo Switch Game', quantity: 4 },
+  { id: 2, name: 'Zelda Breath of the Wild 2', salePrice: 25.00, originalPrice: 35.50, image: '../../public/assets/images/product.jpg', game: 'RS3', type: 'Items', feature: 'RPG', description: 'Nintendo Switch Game', quantity: 4 },
+  { id: 3, name: 'Zelda Ocarine Time', salePrice: 75.00, originalPrice: 99.50, image: '../../public/assets/images/product.jpg', game: 'OSRS', type: 'Gold', feature: 'ADVENTURE', description: 'Nintendo 64 Game', quantity: 2 },
+  { id: 4, name: 'Zelda Majora´s Mask', salePrice: 15.00, originalPrice: 20.50, image: '../../public/assets/images/product.jpg', game: 'RS3', type: 'Items', feature: 'ARCADE', description: 'Nintendo 64 Game', quantity: 2 },
+  { id: 5, name: 'Zelda Link to the Past', salePrice: 45.00, originalPrice: 52.50, image: '../../public/assets/images/product.jpg', game: 'CS:GO', type: 'Gold', feature: 'ADVENTURE', description: 'Nintendo Wii Game', quantity: 10 },
+  { id: 6, name: 'Zelda Tears of the Kingdom', salePrice: 15.00, originalPrice: 22.50, image: '../../public/assets/images/product.jpg', game: 'RS3', type: 'Gold', feature: 'RPG', description: 'Nintendo Switch Game', quantity: 13 },
+  { id: 7, name: 'Zelda Awakening', salePrice: 60.00, originalPrice: 92.50, image: '../../public/assets/images/product.jpg', game: 'CS:GO', type: 'Accounts', feature: 'RPG', description: 'Nintendo GameBoy Game', quantity: 7  },
+  { id: 8, name: 'Zelda II The Adventure of Link', salePrice: 10.00, originalPrice: 25.50, image: '../../public/assets/images/product.jpg', game: 'CS:GO', type: 'Items', feature: 'RPG', description: 'Nintendo GameBoy Color Game', quantity: 9 },
+  { id: 9, name: 'Zelda The Faces of Evil', salePrice: 42.00, originalPrice: 55.50, image: '../../public/assets/images/product.jpg', game: 'OSRS', type: 'Accounts', feature: 'ADVENTURE', description: 'Nintendo NES', quantity: 5 },
+  { id: 10, name: 'Zelda´s Adventure', salePrice: 45.00, originalPrice: 75.50, image: '../../public/assets/images/product.jpg', game: 'RS3', type: 'Accounts', feature: 'ARCADE', description: 'Nintendo GameCube Game', quantity: 6 },
   
 ];
 
