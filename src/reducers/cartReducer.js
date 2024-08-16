@@ -7,7 +7,7 @@ export const cartReducer = (state, action) => {
         const newItems = [...state.items];
         newItems[existingIndex] = {
           ...newItems[existingIndex],
-          quantity: newItems[existingIndex].quantity + 1
+          quantity: Math.min(newItems[existingIndex].quantity + 1, action.payload.maxQuantity)
         };
         return { ...state, items: newItems };
       }
@@ -24,7 +24,7 @@ export const cartReducer = (state, action) => {
           ...state,
           items: state.items.map(item =>
             item.id === action.payload.id
-              ? { ...item, quantity: item.quantity + 1 }
+              ? { ...item, quantity: Math.min(item.quantity + 1, item.maxQuantity) }
               : item
           ),
         };

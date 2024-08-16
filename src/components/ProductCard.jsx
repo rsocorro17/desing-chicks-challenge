@@ -7,7 +7,9 @@ const ProductCard = ({ product }) => {
 
   const { addToCart, removeFromCart, cartItems } = useCart();
 
-  const isInCart = cartItems.some(item => item.id === product.id);
+  const cartItem = cartItems.find(item => item.id === product.id);
+  const cartQuantity = cartItem ? cartItem.quantity : 0;
+  const availableQuantity = product.quantity - cartQuantity;
 
   return (
     <div className="product-card">
@@ -20,21 +22,24 @@ const ProductCard = ({ product }) => {
         <span className="sale-price">${product.salePrice.toFixed(2)}</span>
         <span className="original-price">${product.originalPrice.toFixed(2)}</span>
       </div>
-      <div className="quantity">Quantity: {product.quantity}</div>
+      <div className="quantity">Available: {availableQuantity}</div>
       <div className="button-group">
         <button className="details-btn">
           <FontAwesomeIcon icon={faInfoCircle} /> Details
         </button>
-        {isInCart ? (
+        {cartQuantity > 0 ? (
           <button className="remove-btn" onClick={() => removeFromCart(product.id)}>
             <FontAwesomeIcon icon={faCartArrowDown} /> Remove
           </button>
         ) : (
-          <button className="add-btn" onClick={() => addToCart(product)}>
+          <button className="add-btn" onClick={() => addToCart({...product, maxQuantity: product.quantity})} disabled={availableQuantity === 0}>
             <FontAwesomeIcon icon={faCartPlus} /> Add
           </button>
         )}
       </div>
+      {cartQuantity > 0 && (
+        <div className="cart-quantity">In Cart: {cartQuantity}</div>
+      )}
     </div>
   );
 };

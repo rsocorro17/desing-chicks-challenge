@@ -109,7 +109,7 @@ const MainContent = () => {
         <div className="sort-container filter-item dropdown" style={{marginLeft:'50rem'}}>
           <FontAwesomeIcon icon={faSort} className="filter-icon" />
           <span className='filter-text' onClick={() => toggleDropdown('sort')}>
-            {sortBy} ▼
+            {sortBy} 
           </span>
           <div className={`dropdown-content ${activeDropdown === 'sort' ? 'active' : ''}`}>
             {features.map(feature => (
